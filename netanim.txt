@@ -1,0 +1,33 @@
+//POINT TO POINT NETANIM CODES
+
+#include "ns3/netanim-module.h";
+
+ApplicationContainer clientApps = echoClient.Install (nodes.Get (0));
+  clientApps.Start (Seconds (2.0));
+  clientApps.Stop (Seconds (10.0));
+ AnimationInterface anim("first.xml");
+ 
+ //netanim code for wireless protocol
+    
+    AnimationInterface anim("third.xml");
+    
+    anim.SetConstantPosition(csmaNodes.Get(0),10.0,10.0);
+    anim.SetConstantPosition(csmaNodes.Get(1),10.0,30.0);
+    anim.SetConstantPosition(csmaNodes.Get(2),10.0,50.0);
+    anim.SetConstantPosition(csmaNodes.Get(3),10.0,70.0);
+    
+    anim.SetConstantPosition(wifiStaNodes.Get(0),30.0,10.0);
+    anim.SetConstantPosition(wifiStaNodes.Get(1),50.0,10.0);
+    anim.SetConstantPosition(wifiStaNodes.Get(2),70.0,10.0);
+    
+    anim.SetConstantPosition(wifiApNode.Get(0),100.0,100.0);
+    
+//netanim code for bus
+
+AnimationInterface anim("second.xml");
+  
+  anim.SetConstantPosition(p2pNodes.Get(0),10.0,10.0);
+  anim.SetConstantPosition(p2pNodes.Get(1),20.0,20.0);
+  anim.SetConstantPosition(csmaNodes.Get(1),30.0,30.0);
+  anim.SetConstantPosition(csmaNodes.Get(2),40.0,40.0);
+  anim.SetConstantPosition(csmaNodes.Get(3),50.0,50.0);
